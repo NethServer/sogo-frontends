@@ -36,14 +36,16 @@
 # along with NethServer.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+
+DESTDIR ?= root/usr/share/nethesis/sogo-frontends
 SOGOURL := http://www.sogo.nu/files/downloads/extensions
 XPILIST := $(shell cut -f 3 -d ' ' < SHA1SUM)
 
-.PHONY: download check clean build-rpm build-srpm
+.PHONY: download check clean install
 
 download: $(XPILIST)
 
-check:
+check: SHA1SUM
 	@sha1sum -c SHA1SUM
 
 clean:
@@ -51,10 +53,11 @@ clean:
 
 %.xpi:
 	@echo "Downloading $@...";
-	@curl -O $(SOGOURL)/$@	
+	curl -O $(SOGOURL)/$@	
 
-build-rpm: build-srpm
+install:
+	@echo "Installing to $(DESTDIR).."
+	install -d $(DESTDIR)
+	install *.xpi $(DESTDIR)
 
 
-build-srpm: download check
-	mock

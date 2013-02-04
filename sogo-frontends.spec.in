@@ -1,0 +1,30 @@
+Name:		sogo-frontends
+Version:	@@VERSION@@
+Release:	@@RELEASE@@
+Summary:	SOGo Thunderbird frontends bundle
+License:	GPL
+URL:		http://dev.nethesis.it/projects/nethserver-mail/wiki/%{name}
+BuildArch:	noarch
+
+%description
+SOGo Thunderbird frontends bundle
+
+%prep
+%setup -T
+cp ${RPM_SOURCE_DIR}/Makefile .
+make download check
+
+%build
+make install DESTDIR=root/usr/share/nethesis/sogo-frontends
+
+%install
+(cd root; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
+%{genfilelist} $RPM_BUILD_ROOT > %{name}-%{version}-filelist
+echo "%doc COPYING" >> %{name}-%{version}-filelist
+
+%files -f %{name}-%{version}-filelist
+%defattr(-,root,root)
+
+%changelog
+
+
