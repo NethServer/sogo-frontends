@@ -12,7 +12,9 @@ BuildRequires: nethserver-devtools
 SOGo Thunderbird frontends bundle
 
 %prep
-%setup -T
+cd ${RPM_BUILD_DIR}
+mkdir %{name}-%{version}
+cd %{name}-%{version}
 cp ${RPM_SOURCE_DIR}/Makefile .
 make download check
 
