@@ -53,7 +53,7 @@ clean:
 
 %.xpi:
 	@echo "Downloading $@...";
-	curl -O $(SOGOURL)/$@	
+	curl -f -O $(SOGOURL)/$@	
 
 install:
 	@echo "Installing to $(DESTDIR).."
