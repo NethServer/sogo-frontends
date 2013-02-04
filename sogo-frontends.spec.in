@@ -17,7 +17,7 @@ SOGo Thunderbird frontends bundle
 make download check
 
 %build
-make install DESTDIR=root/usr/share/nethesis/sogo-frontends
+make install DESTDIR=root/usr/share/nethserver/sogo-frontends
 
 %install
 (cd root; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
