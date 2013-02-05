@@ -59,5 +59,6 @@ install:
 	@echo "Installing to $(DESTDIR).."
 	install -d $(DESTDIR)
 	install *.xpi $(DESTDIR)
+	install MANIFEST* $(DESTDIR)
 
 
