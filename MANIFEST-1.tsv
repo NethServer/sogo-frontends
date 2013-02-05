@@ -1,10 +1,10 @@
-{e2fda1a4-762b-4020-b5ad-a41df1933103}	lightning-1.0b2.111i_linux-i686.xpi	Linux_x86-gcc3	thunderbird	3.1	3.1.*
-{e2fda1a4-762b-4020-b5ad-a41df1933103}	lightning-1.0b2.111i_linux-x86_64.xpi	Linux_x86_64-gcc3	thunderbird	3.1	3.1.*
-{e2fda1a4-762b-4020-b5ad-a41df1933103}	lightning-1.0b2.111i_mac.xpi	Darwin_x86-gcc3	thunderbird	3.1	3.1.*
-{e2fda1a4-762b-4020-b5ad-a41df1933103}	lightning-1.0b2.111i_win32.xpi	WINNT_x86-msvc	thunderbird	3.1	3.1.*
-sogo-connector@inverse.ca	sogo-connector-10.0.5.xpi		thunderbird	10	10.0.*
-sogo-connector@inverse.ca	sogo-connector-17.0.3.xpi		thunderbird	17.0	17.0.*
-sogo-connector@inverse.ca	sogo-connector-3.111.xpi		thunderbird	3.1	3.1.*
-sogo-integrator@inverse.ca	sogo-integrator-10.0.5-sogo-demo.xpi		thunderbird	10	10.0.*
-sogo-integrator@inverse.ca	sogo-integrator-17.0.3-sogo-demo.xpi		thunderbird	17.0	17.0.*
-sogo-integrator@inverse.ca	sogo-integrator-3.111-sogo-demo.xpi		thunderbird	3.1	3.1.*
+{e2fda1a4-762b-4020-b5ad-a41df1933103}	lightning-1.0b2.111i_linux-i686.xpi	1.0b2.111	Linux_x86-gcc3	thunderbird	3.1	3.1.*
+{e2fda1a4-762b-4020-b5ad-a41df1933103}	lightning-1.0b2.111i_linux-x86_64.xpi	1.0b2.111	Linux_x86_64-gcc3	thunderbird	3.1	3.1.*
+{e2fda1a4-762b-4020-b5ad-a41df1933103}	lightning-1.0b2.111i_mac.xpi	1.0b2.111	Darwin_x86-gcc3	thunderbird	3.1	3.1.*
+{e2fda1a4-762b-4020-b5ad-a41df1933103}	lightning-1.0b2.111i_win32.xpi	1.0b2.111	WINNT_x86-msvc	thunderbird	3.1	3.1.*
+sogo-connector@inverse.ca	sogo-connector-10.0.5.xpi	10.0.5		thunderbird	10	10.0.*
+sogo-connector@inverse.ca	sogo-connector-17.0.3.xpi	17.0.3		thunderbird	17.0	17.0.*
+sogo-connector@inverse.ca	sogo-connector-3.111.xpi	3.111		thunderbird	3.1	3.1.*
+sogo-integrator@inverse.ca	sogo-integrator-10.0.5-sogo-demo.xpi	10.0.5		thunderbird	10	10.0.*
+sogo-integrator@inverse.ca	sogo-integrator-17.0.3-sogo-demo.xpi	17.0.3		thunderbird	17.0	17.0.*
+sogo-integrator@inverse.ca	sogo-integrator-3.111-sogo-demo.xpi	3.111		thunderbird	3.1	3.1.*
