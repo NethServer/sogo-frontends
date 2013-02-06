@@ -38,6 +38,7 @@
 
 
 DESTDIR ?= root/usr/share/nethesis/sogo-frontends
+TEMPLATEDIR ?= root/etc/e-smith/templates/sogo-frontends
 SOGOURL := http://www.sogo.nu/files/downloads/extensions
 XPILIST := $(shell cut -f 3 -d ' ' < SHA1SUM)
 
@@ -60,5 +61,5 @@ install:
 	install -d $(DESTDIR)
 	install *.xpi $(DESTDIR)
 	install MANIFEST* $(DESTDIR)
-
+	install *.patch $(TEMPLATEDIR)
 
