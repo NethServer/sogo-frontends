@@ -45,6 +45,10 @@ XPILIST := $(shell cut -f 3 -d ' ' < SHA1SUM)
 .PHONY: download check clean install
 
 download: $(XPILIST)
+	@echo "Additional downloads..."
+	curl -f 'http://git.nethesis.it/?p=rpm-smeserver-sogo-thunderbird.git;a=blob_plain;f=lightning-1.2.3_linux-i686.xpi;hb=refs/heads/master' > lightning-1.2.3_linux-i686.xpi
+	curl -f 'http://git.nethesis.it/?p=rpm-smeserver-sogo-thunderbird.git;a=blob_plain;f=lightning-1.2.3_linux-i686.xpi;hb=refs/heads/master' > lightning-1.2.3_mac.xpi
+	curl -f 'http://git.nethesis.it/?p=rpm-smeserver-sogo-thunderbird.git;a=blob_plain;f=lightning-1.2.3_win32.xpi;hb=refs/heads/master' > lightning-1.2.3_win32.xpi
 
 check: SHA1SUM
 	sha1sum -c SHA1SUM
