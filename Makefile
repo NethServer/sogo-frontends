@@ -47,7 +47,7 @@ XPILIST := $(shell cut -f 3 -d ' ' < SHA1SUM)
 download: $(XPILIST)
 
 check: SHA1SUM
-	@sha1sum -c SHA1SUM
+	sha1sum -c SHA1SUM
 
 clean:
 	@rm -fv $(XPILIST)
@@ -57,8 +57,8 @@ clean:
 	curl -f -O $(SOGOURL)/$@	
 
 install:
-	@echo "Installing to $(DESTDIR).."
-	install -d $(DESTDIR)
+	@echo "Installing..."
+	install -d $(DESTDIR) $(TEMPLATEDIR)
 	install *.xpi $(DESTDIR)
 	install MANIFEST* $(DESTDIR)
 	install *.patch $(TEMPLATEDIR)
