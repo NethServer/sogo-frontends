@@ -36,19 +36,19 @@
 # along with NethServer.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-
 DESTDIR ?= root/usr/share/nethesis/sogo-frontends
 TEMPLATEDIR ?= root/etc/e-smith/templates/sogo-frontends
-SOGOURL := http://www.sogo.nu/files/downloads/extensions
 XPILIST := $(shell cut -f 3 -d ' ' < SHA1SUM)
+
+# xpi download mirrors. Try local host at first to save bandwidth:
+XPIMIRRORS += $(shell echo http://`hostname`/nethserver/sogo-frontends)
+XPIMIRRORS += $(shell echo http://`hostname`/sogo-thunderbird/frontends)
+XPIMIRRORS += http://dev.nethesis.it/nethserver/sogo-frontends
+XPIMIRRORS += http://www.sogo.nu/files/downloads/extensions
 
 .PHONY: download check clean install
 
 download: $(XPILIST)
-	@echo "Additional downloads..."
-	curl -f 'http://git.nethesis.it/?p=rpm-smeserver-sogo-thunderbird.git;a=blob_plain;f=lightning-1.2.3_linux-i686.xpi;hb=refs/heads/master' > lightning-1.2.3_linux-i686.xpi
-	curl -f 'http://git.nethesis.it/?p=rpm-smeserver-sogo-thunderbird.git;a=blob_plain;f=lightning-1.2.3_linux-i686.xpi;hb=refs/heads/master' > lightning-1.2.3_mac.xpi
-	curl -f 'http://git.nethesis.it/?p=rpm-smeserver-sogo-thunderbird.git;a=blob_plain;f=lightning-1.2.3_win32.xpi;hb=refs/heads/master' > lightning-1.2.3_win32.xpi
 
 check: SHA1SUM
 	sha1sum -c SHA1SUM
@@ -58,7 +58,12 @@ clean:
 
 %.xpi:
 	@echo "Downloading $@...";
-	curl -f -O $(SOGOURL)/$@	
+	@for M in $(XPIMIRRORS); do \
+		echo "Trying $$M/$@"; \
+		curl -k -L -s -S -f -O $$M/$@ && echo "OK" && exit 0 ;\
+	done; \
+	echo "FAILED."; \
+	exit 1
 
 install:
 	@echo "Installing..."
