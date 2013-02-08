@@ -36,8 +36,9 @@ echo "%doc COPYING" >> %{name}-%{version}-filelist
 
 
 %changelog
-* Mon Feb  4 2013 Davide Principi <davide.principi@nethesis.it> - @@VERSION@@-@@RELEASE@@
+* Fri Feb  8 2013 Davide Principi <davide.principi@nethesis.it> - 1.0.0-1.ns6
 - Initial version
+
 
 
 
