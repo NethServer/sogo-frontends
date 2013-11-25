@@ -3,7 +3,7 @@ Version:	@@VERSION@@
 Release:	@@RELEASE@@
 Summary:	SOGo Thunderbird frontends bundle
 License:	GPL
-URL:		http://dev.nethesis.it/projects/nethserver-mail/wiki/%{name}
+URL:		%{url_prefix}/%{name}
 BuildArch:	noarch
 Source:		%{name}-%{version}.tar.gz
 
