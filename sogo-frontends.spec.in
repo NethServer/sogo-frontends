@@ -28,12 +28,6 @@ echo "%doc COPYING" >> %{name}-%{version}-filelist
 %defattr(-,root,root)
 
 %post
-# Conditionally refresh MANIFEST info, 
-# if nethserver-sogo-thunderbird is available
-[ -x /sbin/e-smith/signal-event ] && 
-    [ -d /etc/e-smith/events/nethserver-sogo-thunderbird-update ] &&
-        /sbin/e-smith/signal-event nethserver-sogo-thunderbird-update
-
 
 %changelog
 * Tue Apr 30 2013 Davide Principi <davide.principi@nethesis.it> - 1.1.0-1.ns6
