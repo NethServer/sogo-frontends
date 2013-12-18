@@ -30,6 +30,9 @@ echo "%doc COPYING" >> %{name}-%{version}-filelist
 %post
 
 %changelog
+* Wed Dec 18 2013 Davide Principi <davide.principi@nethesis.it> - 1.1.1-1.ns6
+- Removed %post scriptlet. Refs #2029
+
 * Tue Apr 30 2013 Davide Principi <davide.principi@nethesis.it> - 1.1.0-1.ns6
 - Added support for TB17
 
