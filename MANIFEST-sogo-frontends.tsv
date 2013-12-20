@@ -6,3 +6,5 @@ sogo-connector-10.0.3.xpi	sogo-connector@inverse.ca	10.0.3	*	Thunderbird/10\.0	1
 sogo-connector-17.0.3.xpi	sogo-connector@inverse.ca	17.0.3	*	Thunderbird/17\.0	17.0	17.0.*
 sogo-integrator-10.0.3-sogo-demo.xpi	sogo-integrator@inverse.ca	10.0.3	*	Thunderbird/10\.0	10.0	10.0.*
 sogo-integrator-17.0.3-sogo-demo.xpi	sogo-integrator@inverse.ca	17.0.3	*	Thunderbird/17\.0	17.0	17.0.*
+sogo-connector-24.0.2.xpi		 sogo-connector@inverse.ca	24.0.2	*	Thunderbird/24\.	24.0.0	24.*
+sogo-integrator-24.0.3-sogo-demo.xpi	sogo-integrator@inverse.ca	24.0.3	*	Thunderbird/24\.	24.0.0	24.*
