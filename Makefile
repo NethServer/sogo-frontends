@@ -68,7 +68,7 @@ clean:
 install:
 	@echo "Installing..."
 	install -d $(DESTDIR) $(TEMPLATEDIR)
-	install *.xpi $(DESTDIR)
-	install MANIFEST* $(DESTDIR)
-	install *.patch $(TEMPLATEDIR)
+	install -m 0644 *.xpi $(DESTDIR)
+	install -m 0644 MANIFEST* $(DESTDIR)
+	install -m 0644 *.patch $(TEMPLATEDIR)
 
