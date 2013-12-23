@@ -18,6 +18,7 @@ make download check
 
 %build
 make install DESTDIR=root/usr/share/nethserver/sogo-frontends
+./createlinks
 
 %install
 (cd root; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
