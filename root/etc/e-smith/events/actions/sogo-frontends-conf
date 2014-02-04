@@ -25,10 +25,13 @@ use esmith::event;
 
 my $eventDirPrefix = "/etc/e-smith/events";
 my $targetEvent = 'nethserver-sogo-thunderbird-update';
-my $success = 0;
+my $errors = 0;
 
-if( -d $eventDirPrefix . '/' . $targetEvent) {
-    $success = esmith::event::event_signal($targetEvent);
+if( -d ($eventDirPrefix . '/' . $targetEvent)) {
+    if( ! esmith::event::event_signal($targetEvent)) {
+	warn "[ERROR] $targetEvent failed.";
+	$errors ++;
+    }
 }
 
-exit($success ? 0 : 1);
+exit($errors == 0 ? 0 : 1);
