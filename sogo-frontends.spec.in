@@ -31,6 +31,10 @@ echo "%doc COPYING" >> %{name}-%{version}-filelist
 %post
 
 %changelog
+* Wed Feb 05 2014 Davide Principi <davide.principi@nethesis.it> - 1.2.0-1.ns6
+- Thunderbird 24 support - Enhancement #2535 [NethServer]
+- Upgrade SOGo to release 2.1.1b - Enhancement #2457 [NethServer]
+
 * Wed Dec 18 2013 Davide Principi <davide.principi@nethesis.it> - 1.1.1-1.ns6
 - Removed %post scriptlet. Refs #2029
 
