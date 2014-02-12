@@ -19,5 +19,4 @@ diff -x '*~' -u -r a/defaults/preferences/site.js b/defaults/preferences/site.js
  pref("calendar.caldav.sched.enabled", true);
 -pref("calendar.timezone.local", "/mozilla.org/20070129_1/America/Montreal");
 -pref("sogo-integrator.autocomplete.server.urlid", "public");
-+pref("calendar.timezone.local", "/mozilla.org/20070129_1/{$TimeZone || 'UTC'}");
 +pref("sogo-integrator.autocomplete.server.urlid", "users");
