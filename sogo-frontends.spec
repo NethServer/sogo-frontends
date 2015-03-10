@@ -1,6 +1,6 @@
 Name:		sogo-frontends
-Version:	@@VERSION@@
-Release:	@@RELEASE@@
+Version:	1.4.0
+Release:	1%{dist}
 Summary:	SOGo Thunderbird frontends bundle
 License:	GPL
 URL:		%{url_prefix}/%{name}
