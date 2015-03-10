@@ -1,0 +1,4 @@
+To build, first download .xpi files with 
+ $ make download
+then launch build as usual
+ $ /usr/bin/make-rpms sogo-frontends.spec
