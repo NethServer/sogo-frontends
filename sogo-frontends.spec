@@ -1,3 +1,6 @@
+%define destdir root%{_datadir}/nethserver/sogo-frontends
+%define templatedir root%{_nstemplatesdir}/sogo-frontends
+
 Name:		sogo-frontends
 Version:	1.4.0
 Release:	1%{dist}
@@ -5,7 +8,9 @@ Summary:	SOGo Thunderbird frontends bundle
 License:	GPL
 URL:		%{url_prefix}/%{name}
 BuildArch:	noarch
-Source:		%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}.tar.gz
+Source1:        http://www.sogo.nu/files/downloads/SOGo/Thunderbird/sogo-integrator-31.0.1-sogo-demo.xpi
+Source2:        http://www.sogo.nu/files/downloads/SOGo/Thunderbird/sogo-connector-31.0.1.xpi
 
 BuildRequires: nethserver-devtools
 
@@ -14,21 +19,22 @@ SOGo Thunderbird frontends bundle
 
 %prep
 %setup
-make download check
 
 %build
-make install DESTDIR=root/usr/share/nethserver/sogo-frontends
+%__install -d %{destdir} %{templatedir}
+%__install -m 0644 %_sourcedir/*.xpi %{destdir}
+%__install -m 0644 MANIFEST* %{destdir}
+%__install -m 0644 *.patch %{templatedir}
 ./createlinks
 
 %install
-(cd root; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
-%{genfilelist} $RPM_BUILD_ROOT > %{name}-%{version}-filelist
-echo "%doc COPYING" >> %{name}-%{version}-filelist
+(cd root; find . -depth -print | cpio -dump %{buildroot})
+%{genfilelist} %{buildroot} > %{name}-%{version}-filelist
 
 %files -f %{name}-%{version}-filelist
 %defattr(-,root,root)
-
-%post
+%doc COPYING
+%dir %{_nseventsdir}/%{name}-update
 
 %changelog
 * Tue Mar 10 2015 Stefano Fancello <stefano.fancello@nethesis.it> - 1.4.0-1.ns6
