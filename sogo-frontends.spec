@@ -1,3 +1,4 @@
+%define fedir root/usr/share/nethserver/sogo-frontends
 Name:		sogo-frontends
 Version:	1.4.0
 Release:	1%{dist}
@@ -5,7 +6,9 @@ Summary:	SOGo Thunderbird frontends bundle
 License:	GPL
 URL:		%{url_prefix}/%{name}
 BuildArch:	noarch
-Source:		%{name}-%{version}.tar.gz
+Source0: %{name}-%{version}.tar.gz
+Source1: http://packages.inverse.ca/SOGo/thunderbird/nightly/sogo-connector-31.0.4-693129fa0d.xpi
+Source2: http://packages.inverse.ca/SOGo/thunderbird/nightly/sogo-integrator-31.0.4-f4f08aa3f2-sogo-demo.xpi
 
 BuildRequires: nethserver-devtools
 
@@ -14,13 +17,16 @@ SOGo Thunderbird frontends bundle
 
 %prep
 %setup
-make download check
+
 
 %build
-make install DESTDIR=root/usr/share/nethserver/sogo-frontends
-./createlinks
+perl createlinks
 
 %install
+mkdir -p %{fedir}
+mv -v MANIFEST-sogo-frontends.tsv %{fedir}
+mv -v %{SOURCE1} %{fedir}/sogo-connector-31.0.4.xpi
+mv -v %{SOURCE2} %{fedir}/sogo-integrator-31.0.4-sogo-demo.xpi
 (cd root; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
 %{genfilelist} $RPM_BUILD_ROOT > %{name}-%{version}-filelist
 echo "%doc COPYING" >> %{name}-%{version}-filelist
