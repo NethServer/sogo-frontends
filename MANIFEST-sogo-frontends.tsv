@@ -1,12 +1,3 @@
 #file	plugin	version	platform	appmatch	appminver	appmaxver
-lightning-1.2.3_win32.xpi	{e2fda1a4-762b-4020-b5ad-a41df1933103}	1.2.3	WINNT_x86-msvc	Thunderbird/10\.0	10.0	10.0.*
-lightning-1.2.3_mac.xpi	{e2fda1a4-762b-4020-b5ad-a41df1933103}	1.2.3	Darwin_x86-gcc3	Thunderbird/10\.0	10.0	10.0.*
-lightning-1.2.3_linux-i686.xpi	{e2fda1a4-762b-4020-b5ad-a41df1933103}	1.2.3	Linux_x86-gcc3	Thunderbird/10\.0	10.0	10.0.*
-sogo-connector-10.0.3.xpi	sogo-connector@inverse.ca	10.0.3	*	Thunderbird/10\.0	10.0	10.0.*
-sogo-connector-17.0.3.xpi	sogo-connector@inverse.ca	17.0.3	*	Thunderbird/17\.0	17.0	17.0.*
-sogo-integrator-10.0.3-sogo-demo.xpi	sogo-integrator@inverse.ca	10.0.3	*	Thunderbird/10\.0	10.0	10.0.*
-sogo-integrator-17.0.3-sogo-demo.xpi	sogo-integrator@inverse.ca	17.0.3	*	Thunderbird/17\.0	17.0	17.0.*
-sogo-connector-24.0.2.xpi	sogo-connector@inverse.ca	24.0.2	*	Thunderbird/24\.	24.0.0	24.*
-sogo-integrator-24.0.3-sogo-demo.xpi	sogo-integrator@inverse.ca	24.0.3	*	Thunderbird/24\.	24.0.0	24.*
-sogo-connector-31.0.1.xpi	sogo-connector@inverse.ca	31.0.1	*	Thunderbird/31\.	31.0.0	31.*
-sogo-integrator-31.0.1-sogo-demo.xpi	sogo-integrator@inverse.ca	31.0.1	*	Thunderbird/31\.	31.0.0	31.*
+sogo-connector-31.0.4.xpi	sogo-connector@inverse.ca	31.0.4	*	Thunderbird.*	31.0.0	99.*
+sogo-integrator-31.0.4-sogo-demo.xpi	sogo-integrator@inverse.ca	31.0.4	*	Thunderbird.*	31.0.0	99.*
