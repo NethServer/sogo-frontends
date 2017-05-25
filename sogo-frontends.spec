@@ -1,7 +1,7 @@
 %define fedir root/usr/share/nethserver/sogo-frontends
 Name:		sogo-frontends
-Version:	1.4.0
-Release:	1%{dist}
+Version: 1.4.1
+Release: 1%{?dist}
 Summary:	SOGo Thunderbird frontends bundle
 License:	GPL
 URL:		%{url_prefix}/%{name}
@@ -37,6 +37,9 @@ echo "%doc COPYING" >> %{name}-%{version}-filelist
 %post
 
 %changelog
+* Thu May 25 2017 Davide Principi <davide.principi@nethesis.it> - 1.4.1-1
+- Thunderbird 52 extensions for SOGo - #3441
+
 * Tue Mar 10 2015 Stefano Fancello <stefano.fancello@nethesis.it> - 1.4.0-1.ns6
 - Thunderbird 31 add-ons. Refs #2961
 - Fix sogo-connector not downloaded automatically with Thunderbird 31 - Bug #2961 [NethServer]
